@@ -8,13 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var songsview: UITableView!
+    
+    var songs = ["不才 - 大鱼", "Hebe - 灵魂伴侣", "陈粒 - 小半", "谢春花 - 借我", "金玟岐 - 姗姗"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+        songsview.dataSource = self
+        songsview.delegate = self
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return songs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "🎶" + " " + songs[indexPath.row]
+        return cell
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
