@@ -32,6 +32,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let song = songs[indexPath.row]
+        performSegue(withIdentifier: "movetolyrics", sender: song)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let LyricsVC = segue.destination as! LyricsViewController
+        LyricsVC.song = sender as! String
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

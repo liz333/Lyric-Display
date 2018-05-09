@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hna-Tj-W29">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,43 +19,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cvz-DL-frP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我爱记歌词" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUl-Ad-TB6">
+                                <rect key="frame" x="117.5" y="81" width="140" height="36"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cvz-DL-frP" secondAttribute="bottom" id="DQO-jr-LPb"/>
+                            <constraint firstItem="CUl-Ad-TB6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DbP-Ev-sYD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cvz-DL-frP" secondAttribute="trailing" id="FMQ-ow-qrN"/>
+                            <constraint firstItem="CUl-Ad-TB6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="G0N-16-iW4"/>
+                            <constraint firstItem="cvz-DL-frP" firstAttribute="top" secondItem="CUl-Ad-TB6" secondAttribute="bottom" constant="17" id="RMB-OF-hnA"/>
                             <constraint firstItem="cvz-DL-frP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gei-t4-ahk"/>
-                            <constraint firstItem="cvz-DL-frP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tQu-PS-E1w"/>
+                            <constraint firstItem="cvz-DL-frP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="tQu-PS-E1w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pXr-wr-S3o"/>
                     <connections>
                         <outlet property="songsview" destination="cvz-DL-frP" id="anK-Pa-ttX"/>
+                        <segue destination="Bq6-gQ-gul" kind="show" identifier="movetolyrics" id="b4Y-dx-RFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="135"/>
+            <point key="canvasLocation" x="1260" y="134.48275862068968"/>
         </scene>
-        <!--View Controller-->
+        <!--Lyrics View Controller-->
         <scene sceneID="brO-1s-ruq">
             <objects>
-                <viewController id="Bq6-gQ-gul" sceneMemberID="viewController">
+                <viewController id="Bq6-gQ-gul" customClass="LyricsViewController" customModule="Lyric_Display" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRq-5F-YL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxk-xg-JRx">
-                                <rect key="frame" x="160.5" y="70" width="55" height="33"/>
+                                <rect key="frame" x="160.5" y="114" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZB-kI-YHI">
-                                <rect key="frame" x="164.5" y="147" width="47" height="28"/>
+                                <rect key="frame" x="164.5" y="197" width="47" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,17 +74,39 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mxk-xg-JRx" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="Ae1-8z-LL8"/>
                             <constraint firstItem="lZB-kI-YHI" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="TAY-9o-fET"/>
                             <constraint firstItem="mxk-xg-JRx" firstAttribute="top" secondItem="8Jb-TQ-e1r" secondAttribute="top" constant="50" id="j0k-uy-mvC"/>
-                            <constraint firstItem="lZB-kI-YHI" firstAttribute="top" secondItem="mxk-xg-JRx" secondAttribute="bottom" constant="44" id="uZJ-1N-Ig8"/>
+                            <constraint firstItem="lZB-kI-YHI" firstAttribute="top" secondItem="mxk-xg-JRx" secondAttribute="bottom" constant="50" id="uZJ-1N-Ig8"/>
+                            <constraint firstItem="mxk-xg-JRx" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="yiZ-zF-STX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Jb-TQ-e1r"/>
                     </view>
+                    <connections>
+                        <outlet property="lyricscontentlabel" destination="lZB-kI-YHI" id="6rE-aQ-SWg"/>
+                        <outlet property="songnamelabel" destination="mxk-xg-JRx" id="d9N-zv-5fw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0Q-0s-GBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.4000000000001" y="144.3778110944528"/>
+            <point key="canvasLocation" x="1988" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yYE-OI-u9h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hna-Tj-W29" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MFT-Zn-lyo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rk2-jD-B7R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tq1-ZQ-gIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="134"/>
         </scene>
     </scenes>
 </document>
