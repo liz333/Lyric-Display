@@ -59,14 +59,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxk-xg-JRx">
-                                <rect key="frame" x="160.5" y="114" width="55" height="33"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="在此输入你的歌词" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="93v-cD-fR3">
+                                <rect key="frame" x="50" y="180" width="275" height="437"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9n-Aa-8nc">
+                                <rect key="frame" x="160" y="89" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZB-kI-YHI">
-                                <rect key="frame" x="164.5" y="197" width="47" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6O-as-9Zl">
+                                <rect key="frame" x="220" y="132" width="47" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,16 +80,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lZB-kI-YHI" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="TAY-9o-fET"/>
-                            <constraint firstItem="mxk-xg-JRx" firstAttribute="top" secondItem="8Jb-TQ-e1r" secondAttribute="top" constant="50" id="j0k-uy-mvC"/>
-                            <constraint firstItem="lZB-kI-YHI" firstAttribute="top" secondItem="mxk-xg-JRx" secondAttribute="bottom" constant="50" id="uZJ-1N-Ig8"/>
-                            <constraint firstItem="mxk-xg-JRx" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="yiZ-zF-STX"/>
+                            <constraint firstItem="8Jb-TQ-e1r" firstAttribute="bottom" secondItem="93v-cD-fR3" secondAttribute="bottom" constant="50" id="3WA-LZ-1sR"/>
+                            <constraint firstItem="8Jb-TQ-e1r" firstAttribute="trailing" secondItem="K6O-as-9Zl" secondAttribute="trailing" constant="108" id="4cb-bT-Cyf"/>
+                            <constraint firstItem="K6O-as-9Zl" firstAttribute="top" secondItem="8Jb-TQ-e1r" secondAttribute="top" constant="68" id="7ba-NG-IvM"/>
+                            <constraint firstItem="V9n-Aa-8nc" firstAttribute="top" secondItem="8Jb-TQ-e1r" secondAttribute="top" constant="25" id="DOm-zL-Yf9"/>
+                            <constraint firstItem="K6O-as-9Zl" firstAttribute="leading" secondItem="8Jb-TQ-e1r" secondAttribute="leading" constant="220" id="KDG-oL-eV0"/>
+                            <constraint firstItem="V9n-Aa-8nc" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="N67-WB-q64"/>
+                            <constraint firstItem="93v-cD-fR3" firstAttribute="leading" secondItem="8Jb-TQ-e1r" secondAttribute="leading" constant="50" id="UF0-Bh-PFz"/>
+                            <constraint firstItem="93v-cD-fR3" firstAttribute="top" secondItem="K6O-as-9Zl" secondAttribute="bottom" constant="20" id="VZz-pw-Zhc"/>
+                            <constraint firstItem="93v-cD-fR3" firstAttribute="centerX" secondItem="HRq-5F-YL2" secondAttribute="centerX" id="amw-sP-rGo"/>
+                            <constraint firstItem="8Jb-TQ-e1r" firstAttribute="trailing" secondItem="93v-cD-fR3" secondAttribute="trailing" constant="50" id="vam-Pk-698"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Jb-TQ-e1r"/>
                     </view>
                     <connections>
-                        <outlet property="lyricscontentlabel" destination="lZB-kI-YHI" id="6rE-aQ-SWg"/>
-                        <outlet property="songnamelabel" destination="mxk-xg-JRx" id="d9N-zv-5fw"/>
+                        <outlet property="lyrictextview" destination="93v-cD-fR3" id="CnO-QB-qmd"/>
+                        <outlet property="singerlabel" destination="K6O-as-9Zl" id="KWX-aB-AR5"/>
+                        <outlet property="songlabel" destination="V9n-Aa-8nc" id="EsP-xJ-4eW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0Q-0s-GBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
